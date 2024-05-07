@@ -59,7 +59,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
 
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
+// Disable keyboard shortcuts
+document.onkeydown = function (e) {
+    if (e.ctrlKey && 
+        (e.keyCode === 67 || // Ctrl+C
+         e.keyCode === 73 || // Ctrl+I
+         e.keyCode === 85 || // Ctrl+U
+         e.keyCode === 123) // F12
+        ) {
+        return false;
+    }
+};
+</script>
 
 <style type="text/css">
 /*-----------------------------------------------------------------------------
